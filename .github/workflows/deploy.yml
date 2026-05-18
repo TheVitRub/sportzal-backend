@@ -29,12 +29,23 @@ jobs:
     needs: test
 
     steps:
+      - name: Check deploy credentials
+        env:
+          SERVER_SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+        run: |
+          if [ -z "$SERVER_SSH_KEY" ] && [ -z "$SERVER_PASSWORD" ]; then
+            echo "Add SERVER_SSH_KEY or SERVER_PASSWORD to repository secrets."
+            exit 1
+          fi
+
       - name: Deploy backend
         uses: appleboy/ssh-action@v1.2.0
         with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
+          host: ${{ secrets.SERVER_HOST || '135.106.139.12' }}
+          username: ${{ secrets.SERVER_USER || 'tvr' }}
           key: ${{ secrets.SERVER_SSH_KEY }}
+          password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             set -e
 
