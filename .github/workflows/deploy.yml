@@ -32,8 +32,9 @@ jobs:
       - name: Deploy backend
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
+          host: 135.106.139.12
+          username: tvr
+          port: 2222
           key: ${{ secrets.SSH_KEY_SERVER }}
           script: |
             set -e
