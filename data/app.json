@@ -1,0 +1,151 @@
+{
+  "nextUserId": 1,
+  "nextCategoryId": 4,
+  "nextExerciseId": 4,
+  "nextMediaId": 1,
+  "nextWorkoutId": 1,
+  "nextWorkoutExerciseId": 1,
+  "nextSetId": 1,
+  "nextShareLinkId": 1,
+  "sessions": {},
+  "users": null,
+  "categories": [
+    {
+      "id": 1,
+      "name": "Силовые",
+      "description": "Упражнения с повторами и весом",
+      "sortOrder": 1,
+      "isActive": true,
+      "createdAt": "2026-05-18T08:10:40.7639454Z",
+      "updatedAt": "2026-05-18T08:10:40.7639454Z"
+    },
+    {
+      "id": 2,
+      "name": "Кардио",
+      "description": "Бег, дорожка, велосипед и другие длительные активности",
+      "sortOrder": 2,
+      "isActive": true,
+      "createdAt": "2026-05-18T08:10:40.7639454Z",
+      "updatedAt": "2026-05-18T08:10:40.7639454Z"
+    },
+    {
+      "id": 3,
+      "name": "Статика",
+      "description": "Планка, удержания и упражнения на время",
+      "sortOrder": 3,
+      "isActive": true,
+      "createdAt": "2026-05-18T08:10:40.7639454Z",
+      "updatedAt": "2026-05-18T08:10:40.7639454Z"
+    }
+  ],
+  "exercises": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "title": "Жим лежа",
+      "description": "Базовое упражнение для грудных мышц",
+      "metricSchema": {
+        "type": "strength",
+        "fields": [
+          {
+            "key": "reps",
+            "label": "Повторы",
+            "unit": "раз",
+            "valueType": "int",
+            "required": true,
+            "min": 1
+          },
+          {
+            "key": "weight_kg",
+            "label": "Вес",
+            "unit": "кг",
+            "valueType": "float",
+            "required": false,
+            "min": 0
+          }
+        ],
+        "target": {
+          "reps": "8-12"
+        }
+      },
+      "isActive": true,
+      "createdBy": 0,
+      "createdAt": "2026-05-18T08:10:40.7639454Z",
+      "updatedAt": "2026-05-18T08:10:40.7639454Z"
+    },
+    {
+      "id": 2,
+      "categoryId": 2,
+      "title": "Беговая дорожка",
+      "description": "Кардио на беговой дорожке с учетом скорости и наклона",
+      "metricSchema": {
+        "type": "treadmill",
+        "fields": [
+          {
+            "key": "duration_min",
+            "label": "Время",
+            "unit": "мин",
+            "valueType": "float",
+            "required": true,
+            "min": 0
+          },
+          {
+            "key": "speed_kmh",
+            "label": "Скорость",
+            "unit": "км/ч",
+            "valueType": "float",
+            "required": false,
+            "min": 0
+          },
+          {
+            "key": "incline_percent",
+            "label": "Наклон",
+            "unit": "%",
+            "valueType": "float",
+            "required": false
+          },
+          {
+            "key": "distance_km",
+            "label": "Дистанция",
+            "unit": "км",
+            "valueType": "float",
+            "required": false,
+            "min": 0
+          }
+        ]
+      },
+      "isActive": true,
+      "createdBy": 0,
+      "createdAt": "2026-05-18T08:10:40.7639454Z",
+      "updatedAt": "2026-05-18T08:10:40.7639454Z"
+    },
+    {
+      "id": 3,
+      "categoryId": 3,
+      "title": "Планка",
+      "description": "Статическое упражнение на корпус",
+      "metricSchema": {
+        "type": "duration",
+        "fields": [
+          {
+            "key": "duration_sec",
+            "label": "Время",
+            "unit": "сек",
+            "valueType": "float",
+            "required": true,
+            "min": 1
+          }
+        ]
+      },
+      "isActive": true,
+      "createdBy": 0,
+      "createdAt": "2026-05-18T08:10:40.7639454Z",
+      "updatedAt": "2026-05-18T08:10:40.7639454Z"
+    }
+  ],
+  "media": null,
+  "workouts": null,
+  "workoutExercises": null,
+  "sets": null,
+  "shareLinks": null
+}
