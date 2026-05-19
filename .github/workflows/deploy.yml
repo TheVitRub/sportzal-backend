@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: day-programm-production-deploy
+  group: sportzal-production-deploy
   cancel-in-progress: false
 
 jobs:
