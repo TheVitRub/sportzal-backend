@@ -31,7 +31,7 @@ type User struct {
 	ID           int64     `json:"id"`
 	Email        string    `json:"email"`
 	Name         string    `json:"name"`
-	PasswordHash string    `json:"-"`
+	PasswordHash string    `json:"passwordHash,omitempty"`
 	Role         string    `json:"role"`
 	CreatedAt    time.Time `json:"createdAt"`
 	UpdatedAt    time.Time `json:"updatedAt"`
