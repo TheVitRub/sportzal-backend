@@ -5,6 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+concurrency:
+  group: day-programm-production-deploy
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,4 +20,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            /home/tvr/fencing/deploy.sh
+            cd /home/tvr/sportzal/backend
+            git fetch --prune origin main
+            git reset --hard origin/main
+            ./deploy.sh
